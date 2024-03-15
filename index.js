@@ -50,8 +50,15 @@ const addNewGoal = () => {
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
 
-    document.querySelector('#goalInput').value= '';
+    document.querySelector('#goalInput').value = '';
 }
+
+// removeGoal.addEventListener('click', function() {
+//     goalList = document.querySelector('#goalList');
+//     const textList = goalList.innerText
+
+//     remove(textList);
+// })
 
 
 
