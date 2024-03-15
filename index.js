@@ -37,25 +37,20 @@ const addNewGoal = () => {
     // The event listener that removes goals when clicked is not related to this issue.
     // Focus on preventing duplicates for now.
 
-    const textList = goalList.textContent; //We get the Content from the Display page, then we assign that content to a textList var
+    //i had to change textContent to innerText so that the it can console an Array not a string
+    const textList = goalList.innerText.split('\n');//We get the Content from the Display page, then we assign that content to a textList var
 
-    if (textList.includes(goalInput)) {
-        //we want to compare the input goal with the existing goals
+    if (textList.includes(goalInput)) { //we want to compare the input goal with the existing goals
         alert("Goal Exist");
         return;
 
     }
 
-    // if (textList === goalInput) {
-    //     alert("Goal Exist");
-    //     return;
-    // }
-
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
 
-    document.querySelector('#goalInput').value = '';
+    document.querySelector('#goalInput').value= '';
 }
 
 
