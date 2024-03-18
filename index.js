@@ -19,9 +19,10 @@ document.querySelector('#submitWorkout').addEventListener('click', displayWorkou
 // NOW LET'S DEBUG TO PREVENT DUPLICATE GOALS FROM BEING SUBMITTED 🚀
 
 const addNewGoal = () => {
-    let goalInput = document.querySelector('#goalInput').value.trim();
+    let goalInput = document.querySelector('#goalInput').value.trim().toLowerCase();
 
     const goalList = document.querySelector('#goalList');
+    console.log(goalList);
 
     // ⚠️ Hint 1: Check for duplicates
     // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
@@ -38,8 +39,8 @@ const addNewGoal = () => {
     // Focus on preventing duplicates for now.
 
     //i had to change textContent to innerText so that the it can console an Array not a string
-    const textList = goalList.innerText.split('\n');//We get the Content from the Display page, then we assign that content to a textList var
-
+    const textList = goalList.innerText;//We get the Content from the Display page, then we assign that content to a textList var
+    console.log(textList);
     if (textList.includes(goalInput)) { //we want to compare the input goal with the existing goals
         alert("Goal Exist");
         return;
@@ -51,11 +52,11 @@ const addNewGoal = () => {
     goalList.appendChild(newGoal);
 
     document.querySelector('#goalInput').value = '';
+    
 }
 
 // removeGoal.addEventListener('click', function() {
 //     goalList = document.querySelector('#goalList');
-//     const textList = goalList.innerText
 
 //     remove(textList);
 // })
